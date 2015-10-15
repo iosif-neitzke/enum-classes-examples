@@ -1,0 +1,21 @@
+project Enum_Is_Not_Enough is
+
+   for Source_Dirs use ("src");
+   for Object_Dir use "obj";
+   for Main use ("main.cpp");
+   for Languages use ("C++");
+
+   package Naming is
+      for Spec_Suffix ("C++") use ".hpp";
+   end Naming;
+
+   package Compiler is
+      for Default_Switches ("c++") use ("-O3", "-Wall", "-Wextra", "-Woverloaded-virtual", "-funroll-loops", "-fPIC", "-pg", "-ftest-coverage", "-fprofile-arcs", "-fconserve-space", "-ffunction-sections", "-fdata-sections");
+   end Compiler;
+
+   package Linker is
+      for Default_Switches ("c++") use ("-fprofile-generate");
+   end Linker;
+
+end Enum_Is_Not_Enough;
+
